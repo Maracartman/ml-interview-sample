@@ -1,0 +1,27 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3050:80"
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./be-products-searcher-ml
+    volumes:
+      - /app/node_modules
+      - ./be-products-searcher-ml:/app
+    environment:
+      - ML_API_HOST=https://api.mercadolibre.com
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./fe-products-searcher-ml
+    volumes:
+      - /app/node_modules
+      - ./fe-products-searcher-ml:/app
+    environment:
+      - MLS_HOST=api

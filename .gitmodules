@@ -1,6 +1,6 @@
 [submodule "be-products-searcher-ml"]
 	path = be-products-searcher-ml
-	url = git@github.com:Maracartman/be-products-searcher-ml.git
+	url = https://github.com/Maracartman/be-products-searcher-ml.git
 [submodule "fe-products-searcher-ml"]
 	path = fe-products-searcher-ml
-	url = git@github.com:Maracartman/fe-products-searcher-ml.git
+	url = https://github.com/Maracartman/fe-products-searcher-ml.git

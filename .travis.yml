@@ -1,9 +1,11 @@
 language: node_js
 sudo: required
 node_js:
-  - "10"
+  - "12"
 services:
   - docker
+cache:
+  npm: false
 
 before_install:
   - docker build -t maracartman/react-test -f ./fe-products-searcher-ml/Dockerfile.dev ./fe-products-searcher-ml

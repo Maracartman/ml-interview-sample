@@ -5,11 +5,9 @@ services:
 
 before_install:
   - docker build -t maracartman/react-test -f ./fe-products-searcher-ml/Dockerfile.dev ./fe-products-searcher-ml
-  - docker build -t maracartman/express-test -f ./be-products-searcher-ml/Dockerfile.dev ./be-products-searcher-ml
 
 script:
   - docker run -e CI=true maracartman/react-test npm run test:nowatch -- --coverage
-  - docker run -e CI=true maracartman/express-test npm run test
 
 after_success:
   - docker build -t maracartman/ml-client ./fe-products-searcher-ml
